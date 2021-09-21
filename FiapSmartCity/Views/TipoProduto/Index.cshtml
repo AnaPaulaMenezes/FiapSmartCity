@@ -1,0 +1,60 @@
+﻿<!-- ViewsTipoProdutoIndex.cshtml -->
+
+@model IEnumerable<FiapSmartCity.Models.TipoProduto>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Tipo de Produto</title>
+</head>
+<body>
+    <h1>Tipo de Produto</h1>
+    <p>
+        <a asp-controller="TipoProduto" asp-action="Cadastrar">Novo Tipo</a>
+    </p>
+
+    @if (@TempData["Mensagem"] != null)
+    {
+        <div class="alert alert-success" role="alert">
+            @TempData["Mensagem"]
+        </div>
+    }
+
+
+    <table class="table" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Descrição</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <label>@item.IdTipo</label>
+                </td>
+                <td>
+                    <label>@item.DescricaoTipo</label>
+                </td>
+                <td>
+                    <a asp-controller="TipoProduto"
+                       asp-action="Editar"
+                       asp-route-id="@item.IdTipo">Editar</a>
+
+                    <a asp-controller="TipoProduto"
+                       asp-action="Consultar"
+                       asp-route-id="@item.IdTipo">Consultar</a>
+
+                    <a asp-controller="TipoProduto"
+                       asp-action="Excluir"
+                       asp-route-id="@item.IdTipo">Excluir</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
