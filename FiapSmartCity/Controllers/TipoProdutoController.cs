@@ -2,6 +2,7 @@
 using FiapSmartCity.Models;
 using FiapSmartCity.Repository;
 using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
 
 namespace FiapSmartCity.Controllers
 {
@@ -9,28 +10,28 @@ namespace FiapSmartCity.Controllers
     {
 
         private readonly TipoProdutoRepository tipoProdutoRepository;
+        private readonly ProdutoRepository produtoRepository;
 
         public TipoProdutoController()
         {
             tipoProdutoRepository = new TipoProdutoRepository();
+            produtoRepository = new ProdutoRepository();
         }
 
         [LogFilter]
         [HttpGet]
         public IActionResult Index()
         {
-            var listaTipo = tipoProdutoRepository.Listar();
+            var listaTipo = tipoProdutoRepository.ListarOrdenadoPorNome();
             return View(listaTipo);
         }
 
-        // Anotação de uso do Verb HTTP Get
         [HttpGet]
         public ActionResult Cadastrar()
         {
             return View(new TipoProduto());
         }
 
-        // Anotação de uso do Verb HTTP Post
         [HttpPost]
         public ActionResult Cadastrar(Models.TipoProduto tipoProduto)
         {
@@ -81,7 +82,6 @@ namespace FiapSmartCity.Controllers
             return View(tipoProduto);
         }
 
-
         [HttpGet]
         public ActionResult Excluir(int Id)
         {
@@ -92,7 +92,18 @@ namespace FiapSmartCity.Controllers
             return RedirectToAction("Index", "TipoProduto");
         }
 
+        [HttpGet]
+        public IList<Produto> ListarProdutosPorTipo(int id)
+        {
+            var listaProdutos = tipoProdutoRepository.ConsultarProdutosPorTipo(id);
+            return listaProdutos;
+        }
 
-
+        [HttpGet]
+        public Produto BuscaProdutoId(int id)
+        {
+            var listaProdutos = produtoRepository.Consultar(id);
+            return listaProdutos;
+        }
     }
 }
