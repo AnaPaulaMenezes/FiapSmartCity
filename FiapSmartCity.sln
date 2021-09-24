@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapSmartCity", "FiapSmartCity\FiapSmartCity.csproj", "{D02A385D-F5A5-4CC8-9D3B-935A176A17C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FiapSmartCity", "FiapSmartCity\FiapSmartCity.csproj", "{D02A385D-F5A5-4CC8-9D3B-935A176A17C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapSmartCityWebAPI", "FiapSmartCityWebAPI\FiapSmartCityWebAPI.csproj", "{8127E513-5198-4278-98DF-322757682EA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiapSmarCityClient", "FiapSmarCityClient\FiapSmarCityClient.csproj", "{27F671B6-B5CA-4672-B555-8495E82F670E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{D02A385D-F5A5-4CC8-9D3B-935A176A17C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D02A385D-F5A5-4CC8-9D3B-935A176A17C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D02A385D-F5A5-4CC8-9D3B-935A176A17C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8127E513-5198-4278-98DF-322757682EA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8127E513-5198-4278-98DF-322757682EA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8127E513-5198-4278-98DF-322757682EA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8127E513-5198-4278-98DF-322757682EA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F671B6-B5CA-4672-B555-8495E82F670E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F671B6-B5CA-4672-B555-8495E82F670E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F671B6-B5CA-4672-B555-8495E82F670E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F671B6-B5CA-4672-B555-8495E82F670E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
